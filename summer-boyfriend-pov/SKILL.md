@@ -1,6 +1,10 @@
 ---
 name: summer-boyfriend-pov
 description: 生成一张成年人物夏季泳装自然抓拍照片，支持单人、双人、多人同框、分职责垫图和任意媒介角色 COS。适用于 Summer Boyfriend POV、伴侣或朋友视角的夏季旅行抓拍、人物垫图泳装 COS；不用于角色设定页或分镜布局。
+metadata:
+  vsc-category: "人像摄影"
+  vsc-deliverables: "prompt,image"
+  vsc-distinction: "夏季泳装、伴侣或朋友视角的一张独立照片，支持多人及角色 COS；只要提示词也支持。不用于照片墙、分镜或角色设定页。"
 ---
 
 # SUMMER BOYFRIEND POV

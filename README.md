@@ -4,7 +4,7 @@
 
 由 [VibeShotClub](https://vibeshot.club) 出品的开源的图像/视频创作Skills 集合，面向 AIGC 创作、提示词设计、视觉风格探索、视频工作流和生成资产管理。
 
-这个仓库将可重复使用的创作方法封装成独立 Skill。安装后，可以在 Codex 中通过 `$skill-name` 直接调用，也可以在此基础上继续扩展自己的创作工作流。
+这个仓库将可重复使用的创作方法封装成独立 Skill。安装后，可以在 Codex 中通过 `$vsc` 描述需求，由统一入口选择合适的技能并直接执行；也可以通过 `$skill-name` 直接调用具体技能。
 
 [探索 VibeShotClub](https://vibeshot.club) · [交流创作](https://vibeshot.club/forum) · [商务合作](mailto:support@vescend.com)
 
@@ -12,6 +12,7 @@
 
 | Skill | 作者（X） | 用途 | 适合场景 |
 | --- | --- | --- | --- |
+| [`vsc`](./vsc/) | VibeShotClub | 根据当前对话选择可用的 VSC 技能并直接执行 | 不知道该选哪个技能、查看能力、统一创作入口 |
 | [`character-candid-photography`](./character-candid-photography/) | [Voxcat](https://x.com/VoxcatAI) | 将成年角色转译为虚构摆拍的遮挡观察与抓拍摄影提示词 | 真人 COS、角色转译、手机快拍、十组差异化构图 |
 | [`codex-image-to-eagle`](./codex-image-to-eagle/) | [古一](https://x.com/MANISH1027512) | 将 Codex 生成图片归档到 Eagle，并保存提示词、标签和文件夹信息 | 图片归档、素材管理、提示词复盘 |
 | [`rare-style-explorer`](./rare-style-explorer/) | [古一](https://x.com/MANISH1027512) | 从 620 条稀有视觉亚风格中组合中文生图提示词 | 风格探索、产品图、人物、海报、场景创意 |
@@ -57,9 +58,25 @@ done
 
 如果使用了自定义 `CODEX_HOME`，请将 `~/.codex/skills` 替换为对应的 Skills 目录。安装后新开一个 Codex 对话；如果 Skill 没有立即出现，请重启 Codex。
 
+推荐安装全部技能后使用 `$vsc`。也可以只安装 `vsc` 与需要的创作技能；入口不会自动安装缺少的技能。运行技能发现脚本需要 Python 3.10+，无需额外 Python 包。
+
 ## 如何使用
 
-在 Codex 中直接写出 `$skill-name`，再描述具体任务。
+### 统一入口
+
+在 Codex 中写出 `$vsc`，再描述想做的作品，无需先记住具体技能名称：
+
+```text
+$vsc 给「陶瓷猫香水瓶」探索 8 种稀有视觉风格，只要提示词。
+$vsc 两位成年朋友在泳池泼水，泳装、朋友视角，生成一张照片。
+$vsc 把刚刚由 Codex 生成的图片和原始提示词归档到 Eagle。
+```
+
+已有需求时，单独输入 `$vsc` 可以接着处理；没有上下文时，会简短引导你描述创作目标。默认选择一个技能并直接执行，涉及图片、视频或 Eagle 时仍需相应工具可用。
+
+`/vsc` 也写入了技能的文本触发说明；能否作为客户端原生斜杠命令取决于宿主和安装方式。当前文档以 Codex 的 `$vsc` 为准。详见 [VSC 入口说明](./vsc/README.md)。
+
+已经知道需要哪个技能时，仍可直接写出 `$skill-name`，再描述具体任务。
 
 ### 生成真实抓拍人像提示词
 
@@ -105,6 +122,9 @@ done
 vsc-skills/
 ├── README.md
 ├── assets/brand/          # VibeShotClub 品牌横图
+├── vsc/                   # 统一入口与随包技能目录
+├── tools/                 # 目录构建与维护依赖
+├── tests/                 # 发现脚本检查与路由行为验收用例
 ├── character-candid-photography/
 ├── codex-image-to-eagle/
 ├── rare-style-explorer/
@@ -135,6 +155,7 @@ skill-name/
 - Skill 使用小写字母、数字和连字符命名
 - `SKILL.md` 包含有效的 `name` 与 `description` YAML 元数据
 - 触发条件明确，不会误匹配大量无关任务
+- 创作技能的 metadata 包含 `vsc-category`、`vsc-deliverables`、`vsc-distinction`，明确分类、实际交付类型和相邻能力边界
 - 用户指定的条件优先于默认规则
 - README 至少说明用途、安装方式和一组输入输出示例
 - 脚本、引用文件和资源都能从 `SKILL.md` 中找到明确入口
@@ -145,6 +166,16 @@ skill-name/
 ```bash
 python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py ./skill-name
 ```
+
+新增或修改技能后，重新生成并校验统一入口目录（维护环境需要 `tools/requirements.txt` 中的 PyYAML）：
+
+```bash
+python3 tools/build_vsc_catalog.py
+python3 tools/build_vsc_catalog.py --check
+python3 -m unittest discover -s tests -v
+```
+
+同时提交生成的目录，避免技能更新后入口仍使用旧的能力信息。元数据示例见 [VSC 维护说明](./vsc/README.md#新增或更新技能)，模型选择和交付范围见 [路由行为验收用例](./tests/vsc-routing-cases.md)。
 
 建议每次提交只解决一个清晰问题，并在 Pull Request 中说明：
 

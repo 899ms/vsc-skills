@@ -1,6 +1,10 @@
 ---
 name: virtual-couple-travel-vlog
 description: Create virtual couple travel vlog workflows and assets from a user-provided theme, destination, couple profile, output folder, or reference images. Use when Codex needs to generate nostalgic iPhone travel photo grids, split 4x4 grids into four 2x2 memory sheets, create male/female character reference cards, generate Topview Omni Reference video clips, write manual Chinese music prompts, assemble final vlog videos, and save all assets in a user-selected dedicated project folder.
+metadata:
+  vsc-category: "旅行视频"
+  vsc-deliverables: "prompt,image,video,workflow"
+  vsc-distinction: "虚拟情侣旅行照片墙、角色卡和连贯 Vlog 工作流；可按用户范围交付方案或提示词，不把方案请求扩大为视频生成。普通情侣单张照片不自动进入此工作流。"
 ---
 
 # Virtual Couple Travel Vlog

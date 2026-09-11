@@ -1,6 +1,10 @@
 ---
 name: vibeshot-candid-photography
 description: 生成具有真实生活摄影感、偶然抓拍感、非常规机位和强烈空间层次的人像写真提示词。适用于用户要求 candid photography、生活感人像、韩系 INS 人像、自然遮挡、非常规构图或批量摄影提示词时。
+metadata:
+  vsc-category: "人像摄影"
+  vsc-deliverables: "prompt"
+  vsc-distinction: "普通生活感人像、自然遮挡、非常规机位和批量摄影提示词；无指定角色或夏季泳装 POV 要求时适用。仅出现泳池或夏天不等于泳装 POV。"
 ---
 
 # Vibeshot Candid Photography

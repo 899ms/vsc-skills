@@ -1,6 +1,10 @@
 ---
 name: rare-style-explorer
 description: Generate and refine AIGC image prompts by combining rare, prompt-ready visual sub-style tags from a bundled 620-entry style library. Use when the user wants style exploration, image prompt variants, rare visual styles, non-generic aesthetics, style mixing, prompt matrices, or subject-to-style ideation for image generation.
+metadata:
+  vsc-category: "风格探索"
+  vsc-deliverables: "prompt"
+  vsc-distinction: "为给定主体探索多个稀有亚风格或风格组合，支持产品、人物、海报、场景。固定东方神怪工笔水墨方向优先专用技能；本技能交付提示词而非直接生图。"
 ---
 
 # Rare Style Explorer

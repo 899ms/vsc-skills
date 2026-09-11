@@ -1,6 +1,10 @@
 ---
 name: character-candid-photography
 description: 将指定成年角色转译为真人 COS 或二次元角色摄影提示词，强调前景遮挡、长焦观察、手机快拍和发现镜头的电影化瞬间。适用于角色名驱动的虚构摆拍、隐蔽观察视角或 n=10 角色抓拍提示词；普通生活人像不属于本技能的主要范围。
+metadata:
+  vsc-category: "人像摄影"
+  vsc-deliverables: "prompt"
+  vsc-distinction: "指定成年角色的 COS 或二次元抓拍，强调遮挡观察、长焦与角色辨识；可批量提示词。普通生活人像优先生活抓拍；夏季泳装伴侣或朋友视角单图优先夏季 POV。"
 ---
 
 # 角色抓拍摄影

@@ -2,6 +2,10 @@
 name: codex-image-to-eagle
 description: Archive Codex-generated images from the current user's Codex generated_images directory into Eagle with the prompt saved as annotation. Use when the user asks to save, archive, import, or sync Codex generated images to Eagle with prompts, tags, and folders.
 allowed-tools: Bash(node *)
+metadata:
+  vsc-category: "图片归档"
+  vsc-deliverables: "archive"
+  vsc-distinction: "将已有 Codex 生成图片连同原始提示词导入 Eagle；依赖实际图片来源与 Eagle，不负责生图，也不泛化为任意素材库迁移。"
 ---
 
 # Codex Image to Eagle

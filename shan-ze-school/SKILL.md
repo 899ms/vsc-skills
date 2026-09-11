@@ -1,6 +1,10 @@
 ---
 name: shan-ze-school
 description: Generate or refine prompts for 杉泽流派 / Shan Ze school-inspired new-oriental mythic ink-and-color fantasy images, especially when the user asks for 山海经、神怪、异兽、妖怪、国风神话、工笔水墨奇幻、东方幻想生物插画, or wants an existing prompt rewritten into this visual language. Use for original image-generation prompts, prompt rewrites, style transfer phrasing, and concise style analysis that translates any living-artist reference into broader art-historical visual grammar.
+metadata:
+  vsc-category: "东方幻想"
+  vsc-deliverables: "prompt,image"
+  vsc-distinction: "明确的东方神怪、山海经异兽、工笔水墨奇幻方向，支持提示词改写及可用工具下生图；广泛探索多种风格优先风格探索，不覆盖普通写实 COS。"
 ---
 
 # 杉泽流派
