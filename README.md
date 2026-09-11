@@ -1,18 +1,22 @@
+[![VibeShotClub](./assets/brand/vibeshotclub-banner.svg)](https://vibeshot.club)
+
 # VSC Skills
 
-VSC 社区维护的 Codex Skills 集合，面向 AIGC 创作、提示词设计、视觉风格探索、视频工作流和生成资产管理。
+由 [VibeShotClub](https://vibeshot.club) 出品的开源的图像/视频创作Skills 集合，面向 AIGC 创作、提示词设计、视觉风格探索、视频工作流和生成资产管理。
 
 这个仓库将可重复使用的创作方法封装成独立 Skill。安装后，可以在 Codex 中通过 `$skill-name` 直接调用，也可以在此基础上继续扩展自己的创作工作流。
 
+[探索 VibeShotClub](https://vibeshot.club) · [交流创作](https://vibeshot.club/forum) · [商务合作](mailto:support@vescend.com)
+
 ## Skill 导航
 
-| Skill | 用途 | 适合场景 |
-| --- | --- | --- |
-| [`codex-image-to-eagle`](./codex-image-to-eagle/) | 将 Codex 生成图片归档到 Eagle，并保存提示词、标签和文件夹信息 | 图片归档、素材管理、提示词复盘 |
-| [`rare-style-explorer`](./rare-style-explorer/) | 从 620 条稀有视觉亚风格中组合中文生图提示词 | 风格探索、产品图、人物、海报、场景创意 |
-| [`shan-ze-school`](./shan-ze-school/) | 生成新东方神话、山海经异兽、工笔水墨奇幻方向的提示词 | 东方神怪、异兽、国风神话插画 |
-| [`vibeshot-candid-photography`](./vibeshot-candid-photography/) | 生成真实生活感、偶然抓拍感、非常规机位的人像摄影提示词 | 韩系人像、生活写真、自然遮挡、批量摄影提示词 |
-| [`virtual-couple-travel-vlog`](./virtual-couple-travel-vlog/) | 从旅行主题生成虚拟情侣照片墙、角色卡、视频提示词和成片工作流 | 虚拟情侣、旅行 Vlog、连续人物资产、视频制作 |
+| Skill | 作者（X） | 用途 | 适合场景 |
+| --- | --- | --- | --- |
+| [`codex-image-to-eagle`](./codex-image-to-eagle/) | [古一](https://x.com/MANISH1027512) | 将 Codex 生成图片归档到 Eagle，并保存提示词、标签和文件夹信息 | 图片归档、素材管理、提示词复盘 |
+| [`rare-style-explorer`](./rare-style-explorer/) | [古一](https://x.com/MANISH1027512) | 从 620 条稀有视觉亚风格中组合中文生图提示词 | 风格探索、产品图、人物、海报、场景创意 |
+| [`shan-ze-school`](./shan-ze-school/) | [Richmond](https://x.com/zhurichmond) | 生成新东方神话、山海经异兽、工笔水墨奇幻方向的提示词 | 东方神怪、异兽、国风神话插画 |
+| [`vibeshot-candid-photography`](./vibeshot-candid-photography/) | [古一](https://x.com/MANISH1027512) | 生成真实生活感、偶然抓拍感、非常规机位的人像摄影提示词 | 韩系人像、生活写真、自然遮挡、批量摄影提示词 |
+| [`virtual-couple-travel-vlog`](./virtual-couple-travel-vlog/) | [Valentin LOU](https://x.com/valentinlulu) | 从旅行主题生成虚拟情侣照片墙、角色卡、视频提示词和成片工作流 | 虚拟情侣、旅行 Vlog、连续人物资产、视频制作 |
 
 每个 Skill 的详细能力、依赖和示例，请进入对应目录查看 `README.md`。
 
@@ -90,6 +94,7 @@ done
 ```text
 vsc-skills/
 ├── README.md
+├── assets/brand/          # VibeShotClub 品牌横图
 ├── codex-image-to-eagle/
 ├── rare-style-explorer/
 ├── shan-ze-school/
@@ -141,3 +146,26 @@ python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py ./skill-n
 - 不同 Skill 的外部依赖不同，请以各目录 README 为准。
 - 涉及第三方平台、API、付费生成或本地软件时，请先确认权限、费用和运行环境。
 - 生成内容仍需使用者根据实际模型、平台规则和发布场景进行审核。
+
+## 关于 VibeShotClub
+
+**让灵感成为作品，让创作经验被更多人复用。**
+
+[VibeShotClub](https://vibeshot.club)（VSC）是目前 X 上最大的 AIGC 视觉创作社区，专注 **AI 生图与 AI 视频创作**，连接热爱视觉表达的创作者、设计师与影像探索者。
+
+我们关注工具与模型的进步，也关注画面背后的审美、情绪与叙事。从一张图的光影、构图和风格，到一段视频的角色一致性、镜头语言与节奏，社区围绕真实作品展开交流，让创作方法可以被理解、复现和继续改进。
+
+- **AI 生图**：探索人像写真、商业视觉、艺术风格与创意表达，分享提示词、参数和创作过程。
+- **AI 视频**：交流图生视频、角色塑造、分镜设计与短片制作，把单张画面的灵感延伸为动态叙事。
+- **创作工作流**：拆解从灵感、生成到后期与交付的完整流程，将有效方法整理为可复用的工具与 Skills。
+- **交流与共创**：发布作品、获得反馈、分享教程与实验，找到审美相近、愿意一起探索的创作伙伴。
+
+**VSC Skills 是社区创作经验的开源延伸。** 我们把提示词设计、视觉探索和资产管理中的实用方法封装成可直接调用的 Skill，让经验走出讨论，进入每个人的创作流程。
+
+[探索社区](https://vibeshot.club) · [看作品与交流方法](https://vibeshot.club/forum) · [加入 VSC](https://vibeshot.club/join)
+
+### 商务合作
+
+欢迎围绕 AIGC 内容创作、品牌共创、工具与工作流展开合作。
+
+联系：[support@vescend.com](mailto:support@vescend.com) · [官网联系页面](https://vibeshot.club/support)
