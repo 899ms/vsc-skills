@@ -15,6 +15,7 @@
 | [`codex-image-to-eagle`](./codex-image-to-eagle/) | [古一](https://x.com/MANISH1027512) | 将 Codex 生成图片归档到 Eagle，并保存提示词、标签和文件夹信息 | 图片归档、素材管理、提示词复盘 |
 | [`rare-style-explorer`](./rare-style-explorer/) | [古一](https://x.com/MANISH1027512) | 从 620 条稀有视觉亚风格中组合中文生图提示词 | 风格探索、产品图、人物、海报、场景创意 |
 | [`shan-ze-school`](./shan-ze-school/) | [Richmond](https://x.com/zhurichmond) | 生成新东方神话、山海经异兽、工笔水墨奇幻方向的提示词 | 东方神怪、异兽、国风神话插画 |
+| [`summer-boyfriend-pov`](./summer-boyfriend-pov/) | — | 生成一张成年人物夏季泳装自然抓拍照片，支持多人同框、分职责垫图和任意媒介角色 COS | 伴侣 / 朋友视角、夏季旅行、真人 COS、角色泳装转译 |
 | [`vibeshot-candid-photography`](./vibeshot-candid-photography/) | [古一](https://x.com/MANISH1027512) | 生成真实生活感、偶然抓拍感、非常规机位的人像摄影提示词 | 韩系人像、生活写真、自然遮挡、批量摄影提示词 |
 | [`virtual-couple-travel-vlog`](./virtual-couple-travel-vlog/) | [Valentin LOU](https://x.com/valentinlulu) | 从旅行主题生成虚拟情侣照片墙、角色卡、视频提示词和成片工作流 | 虚拟情侣、旅行 Vlog、连续人物资产、视频制作 |
 
@@ -83,6 +84,14 @@ done
 使用 $virtual-couple-travel-vlog，制作一对中国情侣在巴塞罗那旅行的虚拟 Vlog。
 ```
 
+### 生成夏季泳装自然抓拍单图
+
+```text
+使用 $summer-boyfriend-pov，两位成年朋友 COS 蒂法与爱丽丝，在泳池泼水，Friend POV，一张独立照片。
+```
+
+支持人物、姿势、构图与摄影风格参考。一次只生成一张独立照片，单图可以多人同框。
+
 ### 归档 Codex 生成图片
 
 ```text
@@ -98,6 +107,7 @@ vsc-skills/
 ├── codex-image-to-eagle/
 ├── rare-style-explorer/
 ├── shan-ze-school/
+├── summer-boyfriend-pov/
 ├── vibeshot-candid-photography/
 └── virtual-couple-travel-vlog/
 ```
